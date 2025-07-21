@@ -22,6 +22,18 @@ ServerEvents.recipes(event => {
      A: 'minecraft:raw_iron',
      B: 'minecraft:redstone'
    }
+  ),
+  event.shapeless(
+    item.of('create:wheat_flour', 1), 
+  [
+    'croptopia:flour'
+  ]
+  ),
+  event.shapeless(
+    item.of('croptopia:flour', 1), 
+  [
+    'create:wheat_flour'
+  ]
   )
  }
 )
