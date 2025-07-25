@@ -1,9 +1,7 @@
 ServerEvents.tags('item', event => {
 
-event.add('forge:ores/raw_aluminium',
+event.add('forge:ingots/aluminum',
     [
-    'immersiveengineering:bauxite_ore',
-    'tfmg:raw_aluminium',
-    'createtankdefenses:raw_aluminium'
+    'createtankdefenses:aluminum_ingot'
     ])
 })
