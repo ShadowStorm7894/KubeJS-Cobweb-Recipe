@@ -47,6 +47,11 @@ ServerEvents.recipes(event => {
 	//The drilling fluid, stress and drill settings are the same as the drilling recipe
 	
 	//Set base value in config for finite veins
+	function CustomVein(title, output, spacing, separation, salt, id, size, biomeWhitelist, drill, speed, stress, fluid) {
+		event.recipes.createoreexcavation.vein(title, output).placement()
+
+		event.recipes.createoreexcavation.drilling()
+	}
 });
 
 //Add any new drill items to #createoreexcavation:drills item tag

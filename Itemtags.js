@@ -1,10 +1,24 @@
 ServerEvents.tags('item', event => {
+  //constants
+  
+  const crushed_raw_materials = [
+    'aluminum', 'silver', 'nickel', 'lead', 'uranium'
+  ]
   
   //Creating item tags for grouping
+  crushed_raw_materials.forEach(material => {
+    event.add(`forge:crushed_raw_materials/${material}`, `create:crushed_raw_${material}`)
+  })
+  
   event.add('forge:ingots/aluminum',
     [
     'create_tank_defenses:aluminum_ingot'
   ])
+
+  event.add('forge:raw_materials/aluminum',
+    [
+    'create_tank_defenses:raw_aluminum'
+    ])
 
   event.add('forge:dusts/sulfur',
     [
@@ -43,4 +57,12 @@ ServerEvents.tags('item', event => {
     [
     'create_the_air_wars:rawtitanium'
   ])
+  
+  event.add('forge:slag',
+    [
+      'tfmg:slag',
+      'create_simple_ore_doubling:slag',
+      'create_tank_defenses:slag_scraps'
+    ]
+  )
 })
