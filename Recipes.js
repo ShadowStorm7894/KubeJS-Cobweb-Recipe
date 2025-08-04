@@ -63,6 +63,54 @@ ServerEvents.recipes(event => {
   '#forge:slag'
   )
 
+  event.replaceInput(
+  {input:'create_tank_defenses:aluminum_ingot'},
+  'create_tank_defenses:aluminum_ingot',
+  '#forge:ingots/aluminum'
+  )
+
+  event.replaceInput(
+  {input:'create_tank_defenses:thermite_dust'},
+  'create_tank_defenses:thermite_dust',
+  '#forge:dusts/thermite'
+  )
+
+  event.replaceInput(
+  {input:'tfmg:thermite_powder'},
+  'tfmg:thermite_powder',
+  '#forge:dusts/thermite'
+  )
+
+  event.replaceInput(
+  {input:'minecraft:string'},
+  'minecraft:string',
+  '#forge:string'
+  )
+
+  event.replaceInput(
+  {input:'minecraft:leather'},
+  'minecraft:leather',
+  '#forge:leather'
+  )
+
+  event.replaceInput(
+  {input:'tfmg:sulfur_dust'},
+  'tfmg:sulfur_dust',
+  '#forge:dusts/sulfur'
+  )
+
+  event.replaceInput(
+  {input:'tfmg:nitrate_dust'},
+  'tfmg:nitrate_dust',
+  '#forge:dusts/saltpeter'
+  )
+
+  event.replaceInput(
+  {input:'create:red_toolbox'},
+  'create:red_toolbox',
+  '#create:toolboxes'
+  )
+
   //Adding new recipes
   const raw_materials = [
     'aluminum', 'titanium', 'silver',
@@ -82,6 +130,38 @@ ServerEvents.recipes(event => {
     ore_tripling(`#forge:crushed_raw_materials/${material}`, `#forge:raw_materials/${material}`)
   })
   
+  const cbc_mw_MCC = [
+    'ap', 'aphe', 'apds', 'apfsds', 'canister', 'he', 'hef', 'heap', 'smoke'
+
+  ]
+
+  /*cbc_mw_MCC.forEach(ammo => {
+    event.shapeless(
+      Item.of(`cbcmodernwarfare:${ammo}_mediumcannon_cartridge`, {Projectile: {id:`cbcmodernwarfare:${ammo}_mediumcannon_round`, Count}}).nbt(),
+      [
+        `cbcmodernwarfare:${ammo}_mediumcannon_round`,
+        'cbcmodernwarfare:filled_mediumcannon_cartridge'
+      ]
+    )
+  })*/
+
+/*cbc_mw_MCC.forEach(ammo => {
+    event.shapeless(
+        `cbcmodernwarfare:${ammo}_mediumcannon_cartridge`,
+        [
+            `cbcmodernwarfare:${ammo}_mediumcannon_round`,
+            'cbcmodernwarfare:filled_mediumcannon_cartridge'
+        ]
+    ).id(`cbcmodernwarfare:${ammo}_mediumcannon_cartridge`)
+        .StrongNBT({
+            "Projectile": {
+                "id": `cbcmodernwarfare:${ammo}_mediumcannon_round`,
+                "Count": 1
+            },
+            "Count": 1
+        })
+})*/
+
   event.recipes.createCrushing(
     [
       Item.of('tfmg:sulfur_dust', 6), 
@@ -98,7 +178,7 @@ ServerEvents.recipes(event => {
     'create_the_air_wars:rawtitanium'
   )
 
-event.recipes.createCrushing(
+  event.recipes.createCrushing(
     [
       Item.of('create:crushed_raw_aluminum'), 
       Item.of('create:crushed_raw_aluminum').withChance(0.75),
@@ -106,11 +186,10 @@ event.recipes.createCrushing(
       Item.of('minecraft:cobblestone').withChance(0.12)
     ], 
     [
-      'immersiveengineering:ore_aluminum',
-      'create_tank_defenses:aluminum_ore',
+      '#forge:stone_ore/aluminum'
     ]
   )
-event.recipes.createCrushing(
+  event.recipes.createCrushing(
     [
       Item.of('create:crushed_raw_aluminum', 2), 
       Item.of('create:crushed_raw_aluminum').withChance(0.25),
@@ -118,8 +197,17 @@ event.recipes.createCrushing(
       Item.of('minecraft:deepslate').withChance(0.12)
     ], 
     [
-      'immersiveengineering:deepslate_ore_aluminum',
-      'create_tank_defenses:aluminum_deepslate_ore',
+      '#forge:deepslate_ore/aluminum'
+    ]
+  )
+
+  event.recipes.createCrushing(
+    [
+      Item.of('minecraft:dirt', 2), 
+      Item.of('minecraft:dirt').withChance(0.5),
+    ], 
+    [
+      'minecraft:coarse_dirt'
     ]
   )
 

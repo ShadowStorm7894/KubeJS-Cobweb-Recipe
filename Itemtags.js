@@ -2,7 +2,7 @@ ServerEvents.tags('item', event => {
   //constants
   
   const crushed_raw_materials = [
-    'aluminum', 'silver', 'nickel', 'lead', 'uranium'
+    'aluminum', 'silver', 'nickel', 'lead', 'uranium', 'titanium'
   ]
   
   //Creating item tags for grouping
@@ -10,6 +10,20 @@ ServerEvents.tags('item', event => {
     event.add(`forge:crushed_raw_materials/${material}`, `create:crushed_raw_${material}`)
   })
   
+  event.add('forge:stone_ore/aluminum',
+    [
+      'immersiveengineering:ore_aluminum',
+      'create_tank_defenses:aluminum_ore'
+    ]
+  )
+
+  event.add('forge:deepslate_ore/aluminum',
+    [
+      'immersiveengineering:deepslate_ore_aluminum',
+      'create_tank_defenses:aluminum_deepslate_ore'
+    ]
+  )
+
   event.add('forge:ingots/aluminum',
     [
     'create_tank_defenses:aluminum_ingot'
@@ -63,6 +77,22 @@ ServerEvents.tags('item', event => {
       'tfmg:slag',
       'create_simple_ore_doubling:slag',
       'create_tank_defenses:slag_scraps'
+    ]
+  )
+  event.add('forge:dusts/aluminum',
+    [
+      'create_tank_defenses:aluminum_dust'
+    ]
+  )
+
+  event.add('forge:plates/aluminum',
+    [
+      'create_tank_defenses:aluminum_sheet'
+    ]
+  )
+  event.add('forge:dusts/thermite',
+    [
+      'tfmg:thermite_powder',
     ]
   )
 })
