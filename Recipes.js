@@ -130,37 +130,23 @@ ServerEvents.recipes(event => {
     ore_tripling(`#forge:crushed_raw_materials/${material}`, `#forge:raw_materials/${material}`)
   })
   
-  const cbc_mw_MCC = [
+ /* const cbc_mw_MCC = [
     'ap', 'aphe', 'apds', 'apfsds', 'canister', 'he', 'hef', 'heap', 'smoke'
 
   ]
 
-  /*cbc_mw_MCC.forEach(ammo => {
-    event.shapeless(
-      Item.of(`cbcmodernwarfare:${ammo}_mediumcannon_cartridge`, {Projectile: {id:`cbcmodernwarfare:${ammo}_mediumcannon_round`, Count}}).nbt(),
-      [
-        `cbcmodernwarfare:${ammo}_mediumcannon_round`,
-        'cbcmodernwarfare:filled_mediumcannon_cartridge'
-      ]
-    )
-  })*/
-
-/*cbc_mw_MCC.forEach(ammo => {
-    event.shapeless(
-        `cbcmodernwarfare:${ammo}_mediumcannon_cartridge`,
-        [
-            `cbcmodernwarfare:${ammo}_mediumcannon_round`,
-            'cbcmodernwarfare:filled_mediumcannon_cartridge'
-        ]
-    ).id(`cbcmodernwarfare:${ammo}_mediumcannon_cartridge`)
-        .StrongNBT({
-            "Projectile": {
-                "id": `cbcmodernwarfare:${ammo}_mediumcannon_round`,
-                "Count": 1
-            },
-            "Count": 1
-        })
-})*/
+ cbc_mw_MCC.forEach(ammo => {
+  event.shapeless(
+    Item.of(`cbcmodernwarfare:${ammo}_mediumcannon_cartridge`, 1,
+  `{Projectile:{id:"cbcmodernwarfare:${ammo}_mediumcannon_round",Count:1b}}`
+ ),
+    [
+      `cbcmodernwarfare:${ammo}_mediumcannon_round`,
+      'cbcmodernwarfare:filled_mediumcannon_cartridge'
+    ]
+  )
+ })*/
+ //cbcmodernwarfare medium cannon crafting
 
   event.recipes.createCrushing(
     [
